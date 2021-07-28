@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>
+{% extends 'rango/base.html' %}
+{% block title_block %}
+    Add_category
+{% endblock %}
+{% block body_block%}
+    <h1>
     Add a Category
 </h1>
 <div>
@@ -22,5 +21,6 @@
         <input type="submit" name="submit" value="Create Category"/>
     </form>
 </div>
-</body>
-</html>
+{% endblock %}
+{% block Endweb_block %}
+{% endblock %}

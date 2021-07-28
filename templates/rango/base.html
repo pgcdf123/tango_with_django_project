@@ -15,11 +15,13 @@
 </div>
 <hr/>
 <div>
-    <ul>
+    {% block Endweb_block %}
+         <ul>
         <li><a href="{% url 'rango:add_category' %}">Add a New Category</a></li>
          <li><a href="{% url 'rango:about' %}">About</a></li>
          <li><a href="{% url 'rango:index' %}">Index</a></li>
     </ul>
+    {% endblock %}
 </div>
 </body>
 </html>
