@@ -7,13 +7,10 @@
 {% block body_block %}
     <h1>Keep rango says...</h1>
     <div>
-    here is the page about<br/>
-    This page complied by WEIXUAN<br/>
-    VisitCookie:{{ visit }}<br/>
-</div>
-    <div>
-    <a href="/rango/">Index</a><br/>
+       here is the page about<br/>
+       This page compiled by WEIXUAN LI<br/>
+       VisitCookie:{{ visits }}<br/>
+    </div>
     <img src="{% static 'images/rango.jpg' %}" alt="Pciture of Rango"/>
     <img src="{{ MEDIA_URL }}cat.jpg" alt="Picture of a Cat" />
-</div>
 {% endblock %}
