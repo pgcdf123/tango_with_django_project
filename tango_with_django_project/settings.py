@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-j7o@&_yv_#%pd)hb9kvfw4y!b7&n9y281o-t(p(296d#8b@t%%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+LOGIN_URL = 'rango:login'
 ALLOWED_HOSTS = []
 
 
