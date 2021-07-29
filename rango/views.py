@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from rango.models import Category, Page
 from rango.forms import CategroyForm, PageForm, UserForm, UserProfileForm
 from django.urls import reverse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -29,6 +29,7 @@ def show_category(request,category_name_slug):
         context_dic['category'] = None
         context_dic['pages'] = None
     return render(request, 'rango/category.html', context=context_dic)
+@login_required
 def add_category(request):
     form = CategroyForm()
     if request.method == 'POST':
@@ -39,6 +40,7 @@ def add_category(request):
         else:
             print(form.errors)
     return render(request,'rango/add_category.html', {'form': form})
+@login_required
 def add_page(request,category_name_slug):
     try:
         category=Category.objects.get(slug=category_name_slug)
@@ -106,4 +108,8 @@ def some_view(request):
         return HttpResponse("You are not logged in ")
 @login_required
 def restricted(requset):
-    return HttpResponse("Since you're logged in , you can see this text!")
+    return render(requset,'rango/restricted.html')
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect(reverse('rango:index'))
